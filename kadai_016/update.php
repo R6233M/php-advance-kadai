@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 
         $count = $stmt_update->rowCount();
 
-        $message = "商品を{$count}件編集しました。";
+        $message = "書籍を{$count}件編集しました。";
 
         header("Location: read.php?message={$message}");
     } catch (PDOException $e) {
@@ -90,7 +90,7 @@ if (isset($_GET['id'])) {
     </header>
     <main>
         <article class="registration">
-            <h1>書籍登録</h1>
+            <h1>書籍編集</h1>
             <div class="back">
                 <a href="read.php" class="btn">&lt;戻る</a>
             </div>

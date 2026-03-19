@@ -19,9 +19,9 @@ try {
     }
     
     if ($order === 'desc') {
-        $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY update_at DESC';
+        $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY updated_at DESC';
     } else {
-        $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY update_at ASC';
+        $sql_select = 'SELECT * FROM books WHERE book_name LIKE :keyword ORDER BY updated_at ASC';
     }
     
     $stmt_select = $pdo->prepare($sql_select);
@@ -79,7 +79,7 @@ try {
                     <a href="read.php?order=asc&keyword=<?= $keyword ?>">
                         <img src="images/asc.png" alt="昇順に並び替え" class="sort-img">
                     </a>
-                    <form action="read.php" method="get" class="search-from">
+                    <form action="read.php" method="get" class="search-form">
                         <input type="hidden" name="order" value="<?= $order ?>">
                         <input type="text" class="search-box" placeholder="書籍名で検索" name="keyword" value="<?= $keyword ?>">
                     </form>
