@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
         $stmt_update->bindValue(':book_code', $_POST['book_code'], PDO::PARAM_INT);
         $stmt_update->bindValue(':book_name', $_POST['book_name'], PDO::PARAM_STR);
-        $stmt_update->bindValue('price', $_POST['price'], PDO::PARAM_INT);
+        $stmt_update->bindValue(':price', $_POST['price'], PDO::PARAM_INT);
         $stmt_update->bindValue(':stock_quantity', $_POST['stock_quantity'], PDO::PARAM_INT);
         $stmt_update->bindValue(':genre_code', $_POST['genre_code'], PDO::PARAM_INT);
         $stmt_update->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
@@ -97,7 +97,7 @@ if (isset($_GET['id'])) {
             <form action="update.php?id=<?= $_GET['id'] ?>" method="post" class="registration-form">
                 <div>
                     <label for="book_code">書籍コード</label>
-                    <input type="number" id="book_code" name="book_code" value=<?= $book['book_code'] ?> min="0" max="100000000" required>
+                    <input type="number" id="book_code" name="book_code" value="<?= $book['book_code'] ?>" min="0" max="100000000" required>
 
                     <label for="book_name">書籍名</label>
                     <input type="text" id="book_name" name="book_name" value="<?= $book['book_name'] ?>" maxlength="50" required>
@@ -122,7 +122,7 @@ if (isset($_GET['id'])) {
                         ?>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn" name="submit" value="update">登録</button>
+                <button type="submit" class="submit-btn" name="submit" value="update">更新</button>
             </form>
         </article>
     </main>
